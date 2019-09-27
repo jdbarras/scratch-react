@@ -2,7 +2,6 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
   module: {
     rules: [
       {
@@ -10,6 +9,16 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         options: { presets: ['@babel/env'] }
+      },
+      {
+        test: /\.svg$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'react-svg-loader'
+      },
+      {
+        test: /\.png$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'file-loader'
       },
       {
         test: /\.css$/,
@@ -22,10 +31,5 @@ module.exports = {
     path: path.resolve(__dirname, 'public/dist/'),
     publicPath: 'dist/',
     filename: 'bundle.js'
-  },
-  devServer: {
-    contentBase: path.join(__dirname, 'public/'),
-    port: 3000,
-    publicPath: 'http://localhost:3000/dist/'
   }
 };

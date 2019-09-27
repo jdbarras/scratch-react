@@ -1,0 +1,20 @@
+{
+  "env": {
+    "browser": true
+  },
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": ["import"],
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "import/no-named-as-default": 0,
+    "react/destructuring-assignment": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".js", ".jsx"] }
+    ],
+    "react/jsx-one-expression-per-line": "single-child",
+    "linebreak-style": 0
+  }
+}
